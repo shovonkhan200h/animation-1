@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="slideshow-container">
+        <div class="slideshow-elements">
+            <div class="slideshow-element current">
+                <i class="fas fa-football"></i>
+                <h2>Football</h2>
+            </div>
+
+            <div class="slideshow-element">
+                <i class="fas fa-volleyball-ball"></i>
+                <h2>Vollyball</h2>
+            </div>
+
+            <div class="slideshow-element">
+                <i class="fas fa-person-swimming"></i>
+                <h2>Swimming</h2>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const slidshowElements = document.querySelectorAll(".slideshow-element");
+console.log(slidshowElements)
+let countElements = 1;
+setInterval(() => {
+    countElements ++;
+    let currentElement = document.querySelector(".current");
+
+    currentElement.classList.remove("current");
+
+    if(countElements > slidshowElements.length){
+        slidshowElements[0].classList.add("current");
+        countElements=1;
+    }else{
+        currentElement.nextElementSibling.classList.add("current");
+    }  
+}, 2000);
+
+</script>
+</body>
+</html>
